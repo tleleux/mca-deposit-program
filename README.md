@@ -1,2 +1,1 @@
-# mca-deposit-program
-Cashflow Acquisitions MCA Deposit Program — investor walkthrough
+MCA Deposit Program — Cashflow Acquisitions
