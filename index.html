@@ -788,6 +788,136 @@
     font-size: 11px;
     color: var(--muted-dim);
   }
+
+/* ============ INTERACTIVE CALCULATOR ============ */
+.calc-wrap {
+  background: var(--bg-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 36px 32px;
+  margin-top: 32px;
+}
+.calc-input-block {
+  margin-bottom: 32px;
+}
+.calc-input-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.calc-amount-display {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: var(--mono);
+  text-align: center;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+.calc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 12px;
+}
+.calc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid var(--bg-2);
+  box-shadow: 0 0 0 2px var(--primary), 0 4px 12px var(--primary-glow);
+  transition: transform 0.15s ease;
+}
+.calc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+.calc-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid var(--bg-2);
+  box-shadow: 0 0 0 2px var(--primary), 0 4px 12px var(--primary-glow);
+}
+.calc-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  padding: 0 4px;
+}
+.calc-results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 8px;
+}
+.calc-result-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 16px;
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+.calc-result-card:hover {
+  border-color: var(--border-strong);
+}
+.calc-result-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.calc-result-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--mono);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.calc-result-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.calc-disclaimer {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  text-align: center;
+}
+.calc-disclaimer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.calc-disclaimer a:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  .calc-wrap { padding: 28px 20px; }
+  .calc-results { grid-template-columns: repeat(2, 1fr); }
+  .calc-amount-display { font-size: 42px; }
+  .calc-result-value { font-size: 22px; }
+}
 </style>
 </head>
 <body>
@@ -902,17 +1032,17 @@
         <div class="math-output">$2,000 <small>Your return that week</small></div>
       </div>
       <div class="math-row">
-        <div class="math-input">Daily ACH pulls (Mon-Thu)<strong>4 days × $592</strong></div>
+        <div class="math-input">Daily ACH pulls (Mon-Thu)<strong>4 days × $475</strong></div>
         <div class="math-arrow">→</div>
-        <div class="math-output">$2,168 <small>Steady, day-by-day</small></div>
+        <div class="math-output">$1,900 <small>Steady, day-by-day</small></div>
       </div>
       <div class="math-row">
-        <div class="math-input">Friday balloon payment<strong>1 × $132</strong></div>
+        <div class="math-input">Friday balloon payment<strong>1 × $100</strong></div>
         <div class="math-arrow">→</div>
-        <div class="math-output">$132 <small>Closes out the position</small></div>
+        <div class="math-output">$100 <small>Closes out the position</small></div>
       </div>
       <div class="math-row" style="border-top:1px solid var(--border-strong); padding-top:22px;">
-        <div class="math-input"><strong>Result by Friday</strong>Original $20K + $4K return</div>
+        <div class="math-input"><strong>Result by Friday</strong>Original $20K + $2K return</div>
         <div class="math-arrow">=</div>
         <div class="math-output" style="color:var(--accent); font-size:28px;">$22,000 <small>Pull out or redeploy</small></div>
       </div>
@@ -920,32 +1050,112 @@
       <div class="weekly">
         <div class="weekly-day">
           <div class="weekly-day-label">Mon</div>
-          <div class="weekly-day-amt">$592</div>
+          <div class="weekly-day-amt">$475</div>
         </div>
         <div class="weekly-day">
           <div class="weekly-day-label">Tue</div>
-          <div class="weekly-day-amt">$592</div>
+          <div class="weekly-day-amt">$475</div>
         </div>
         <div class="weekly-day">
           <div class="weekly-day-label">Wed</div>
-          <div class="weekly-day-amt">$592</div>
+          <div class="weekly-day-amt">$475</div>
         </div>
         <div class="weekly-day">
           <div class="weekly-day-label">Thu</div>
-          <div class="weekly-day-amt">$592</div>
+          <div class="weekly-day-amt">$475</div>
         </div>
         <div class="weekly-day balloon">
           <div class="weekly-day-label">Fri Balloon</div>
-          <div class="weekly-day-amt">$132</div>
+          <div class="weekly-day-amt">$100</div>
         </div>
       </div>
 
       <p style="margin-top:28px; font-size:13px; color:var(--muted); line-height:1.6;">
-        Returns scale linearly with position size. <strong style="color:var(--text-2);">$5K returns ≈ $18/day for 4 days, ~$568 balloon.</strong> $50K returns are deployed across multiple businesses to keep concentration low. $100K+ positions are typically split across 5+ businesses by design.
+        Returns scale linearly with position size. <strong style="color:var(--text-2);">$5K returns ~$500/week. $50K returns ~$5,000/week.</strong> Larger positions are deployed across multiple businesses to keep concentration low — $100K+ positions are typically split across 5+ businesses by design. <strong style="color:var(--primary);">Use the calculator below to run your own numbers.</strong>
       </p>
     </div>
   </div>
 </section>
+
+<!-- INTERACTIVE CALCULATOR -->
+<section class="section" id="calc-section">
+  <div class="container">
+    <div class="section-eyebrow">Section 2½ · Run your own numbers</div>
+    <h2>Move the slider. <span class="hl">See your math.</span></h2>
+    <p class="lede">
+      Same conservative rate the program runs on every active position — 10 points (10%) per week on capital deployed. No compounding assumed, no leverage modeled, no projections. If you redeploy each Friday, the numbers below are what your account does.
+    </p>
+
+    <div class="calc-wrap">
+      <div class="calc-input-block">
+        <div class="calc-input-label">Your position size</div>
+        <div class="calc-amount-display" id="calc-amount">$20,000</div>
+        <input type="range" min="5000" max="100000" step="1000" value="20000" class="calc-slider" id="calc-slider" aria-label="Position size in dollars"/>
+        <div class="calc-slider-labels">
+          <span>$5K</span>
+          <span>$25K</span>
+          <span>$50K</span>
+          <span>$75K</span>
+          <span>$100K</span>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div class="calc-result-card">
+          <div class="calc-result-label">Per week</div>
+          <div class="calc-result-value" id="calc-week">$2,000</div>
+          <div class="calc-result-sub">paid every Friday</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">Per month</div>
+          <div class="calc-result-value" id="calc-month">$8,000</div>
+          <div class="calc-result-sub">4 weeks redeployed</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">Per quarter</div>
+          <div class="calc-result-value" id="calc-quarter">$26,000</div>
+          <div class="calc-result-sub">13 weeks of returns</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">6 months</div>
+          <div class="calc-result-value" id="calc-half">$52,000</div>
+          <div class="calc-result-sub">26 weeks redeployed</div>
+        </div>
+      </div>
+
+      <p class="calc-disclaimer">
+        <strong style="color:var(--text-2);">Conservative math:</strong> assumes the standard 10-point weekly rate, continuous redeployment of principal only (no compounding of returns), no skipped weeks, and no business defaults. Returns are based on real cash flow from vetted borrower businesses and are not guaranteed.<br/>
+        <a href="#cta">Walk through your numbers with Aaron and Sam →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var slider = document.getElementById('calc-slider');
+  if (!slider) return;
+  var amountEl = document.getElementById('calc-amount');
+  var weekEl = document.getElementById('calc-week');
+  var monthEl = document.getElementById('calc-month');
+  var quarterEl = document.getElementById('calc-quarter');
+  var halfEl = document.getElementById('calc-half');
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+  function update() {
+    var amt = parseInt(slider.value, 10);
+    var weekly = amt * 0.10;
+    amountEl.textContent = fmt(amt);
+    weekEl.textContent = fmt(weekly);
+    monthEl.textContent = fmt(weekly * 4);
+    quarterEl.textContent = fmt(weekly * 13);
+    halfEl.textContent = fmt(weekly * 26);
+  }
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>
 
 <!-- INDUSTRY CREDIBILITY -->
 <section class="section">
@@ -1169,8 +1379,8 @@
         <div class="compare-cell them">Quarterly or at exit</div>
       </div>
       <div class="compare-row">
-        <div class="compare-cell compare-label">Annualized return target</div>
-        <div class="compare-cell us">~40% on capital deployed</div>
+        <div class="compare-cell compare-label">Return rate</div>
+        <div class="compare-cell us">~10% per week on capital deployed (~40% per month if continuously redeployed)</div>
         <div class="compare-cell them">8-14%</div>
       </div>
       <div class="compare-row">
