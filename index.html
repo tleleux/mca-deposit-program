@@ -913,10 +913,25 @@
 }
 .calc-disclaimer a:hover { text-decoration: underline; }
 @media (max-width: 720px) {
-  .calc-wrap { padding: 28px 20px; }
-  .calc-results { grid-template-columns: repeat(2, 1fr); }
-  .calc-amount-display { font-size: 42px; }
-  .calc-result-value { font-size: 22px; }
+  .calc-wrap { padding: 24px 16px; border-radius: 14px; }
+  .calc-results { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .calc-amount-display { font-size: 40px; margin-bottom: 18px; }
+  .calc-result-card { padding: 16px 10px; }
+  .calc-result-value { font-size: 20px; }
+  .calc-result-label { font-size: 10px; letter-spacing: 1px; }
+  .calc-result-sub { font-size: 11px; }
+  .calc-slider { height: 8px; }
+  .calc-slider::-webkit-slider-thumb {
+    width: 32px; height: 32px;
+    box-shadow: 0 0 0 2px var(--primary), 0 4px 14px var(--primary-glow);
+  }
+  .calc-slider::-moz-range-thumb {
+    width: 32px; height: 32px;
+  }
+  .calc-slider-labels { font-size: 11px; padding: 0 2px; }
+  .calc-slider-labels span:nth-child(2),
+  .calc-slider-labels span:nth-child(4) { display: none; }
+  .calc-disclaimer { font-size: 12px; line-height: 1.6; padding-top: 18px; margin-top: 20px; }
 }
 </style>
 </head>
@@ -979,108 +994,10 @@
   </div>
 </section>
 
-<!-- WHAT IS THIS -->
-<section class="section" id="how">
-  <div class="container">
-    <div class="section-eyebrow">Section 1 · The 60-second version</div>
-    <h2>What you're <span class="hl">actually</span> doing.</h2>
-    <p class="lede">
-      A merchant cash advance ("MCA") is a way for a brick-and-mortar business to get cash in days instead of months. They get the speed. You get the upside. We sit in the middle, pick which businesses qualify, and structure the deal so your capital is protected.
-    </p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>You deposit capital</h3>
-        <p>Start at $5K. The standard position is $20K. You can deploy more across multiple businesses.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>We place it with a vetted business</h3>
-        <p>2+ years of bank statements. Six months of consistent receivables. $100K+ weekly cash flow. Lawyer-reviewed every time.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>The business pays weekly</h3>
-        <p>ACH pulls daily on the receivables we have first dibs on. By Friday, the full position is repaid plus your return.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>You decide every Friday</h3>
-        <p>Redeploy into next week's position, or pull your money out. No lock-up. Your call, every single week.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE MATH -->
-<section class="section">
-  <div class="container">
-    <div class="section-eyebrow">Section 2 · Show me the numbers</div>
-    <h2>The math <span class="hl">looks crazy.</span> It's not.</h2>
-    <p class="lede">
-      Every cent of return comes from real businesses paying real fees on real receivables. No leverage. No magic. The reason you've never heard of it is because operators who run these books at scale don't need outside capital - they have $30M+ lines of credit from private equity.
-    </p>
-
-    <div class="math-block">
-      <div class="math-block-title">A $20,000 position · One week</div>
-      <h3 class="math-block-h">From deposit to deposit:</h3>
-
-      <div class="math-row">
-        <div class="math-input">You deposit<strong>$20,000</strong></div>
-        <div class="math-arrow">→</div>
-        <div class="math-output">$2,000 <small>Your return that week</small></div>
-      </div>
-      <div class="math-row">
-        <div class="math-input">Daily ACH pulls (Mon-Thu)<strong>4 days × $475</strong></div>
-        <div class="math-arrow">→</div>
-        <div class="math-output">$1,900 <small>Steady, day-by-day</small></div>
-      </div>
-      <div class="math-row">
-        <div class="math-input">Friday balloon payment<strong>1 × $100</strong></div>
-        <div class="math-arrow">→</div>
-        <div class="math-output">$100 <small>Closes out the position</small></div>
-      </div>
-      <div class="math-row" style="border-top:1px solid var(--border-strong); padding-top:22px;">
-        <div class="math-input"><strong>Result by Friday</strong>Original $20K + $2K return</div>
-        <div class="math-arrow">=</div>
-        <div class="math-output" style="color:var(--accent); font-size:28px;">$22,000 <small>Pull out or redeploy</small></div>
-      </div>
-
-      <div class="weekly">
-        <div class="weekly-day">
-          <div class="weekly-day-label">Mon</div>
-          <div class="weekly-day-amt">$475</div>
-        </div>
-        <div class="weekly-day">
-          <div class="weekly-day-label">Tue</div>
-          <div class="weekly-day-amt">$475</div>
-        </div>
-        <div class="weekly-day">
-          <div class="weekly-day-label">Wed</div>
-          <div class="weekly-day-amt">$475</div>
-        </div>
-        <div class="weekly-day">
-          <div class="weekly-day-label">Thu</div>
-          <div class="weekly-day-amt">$475</div>
-        </div>
-        <div class="weekly-day balloon">
-          <div class="weekly-day-label">Fri Balloon</div>
-          <div class="weekly-day-amt">$100</div>
-        </div>
-      </div>
-
-      <p style="margin-top:28px; font-size:13px; color:var(--muted); line-height:1.6;">
-        Returns scale linearly with position size. <strong style="color:var(--text-2);">$5K returns ~$500/week. $50K returns ~$5,000/week.</strong> Larger positions are deployed across multiple businesses to keep concentration low — $100K+ positions are typically split across 5+ businesses by design. <strong style="color:var(--primary);">Use the calculator below to run your own numbers.</strong>
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- INTERACTIVE CALCULATOR -->
 <section class="section" id="calc-section">
   <div class="container">
-    <div class="section-eyebrow">Section 2½ · Run your own numbers</div>
+    <div class="section-eyebrow">Section 1 · Run your own numbers</div>
     <h2>Move the slider. <span class="hl">See your math.</span></h2>
     <p class="lede">
       Same conservative rate the program runs on every active position — 10 points (10%) per week on capital deployed. No compounding assumed, no leverage modeled, no projections. If you redeploy each Friday, the numbers below are what your account does.
@@ -1157,10 +1074,108 @@
 })();
 </script>
 
+<!-- WHAT IS THIS -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-eyebrow">Section 2 · The 60-second version</div>
+    <h2>What you're <span class="hl">actually</span> doing.</h2>
+    <p class="lede">
+      A merchant cash advance ("MCA") is a way for a brick-and-mortar business to get cash in days instead of months. They get the speed. You get the upside. We sit in the middle, pick which businesses qualify, and structure the deal so your capital is protected.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>You deposit capital</h3>
+        <p>Start at $5K. The standard position is $20K. You can deploy more across multiple businesses.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We place it with a vetted business</h3>
+        <p>2+ years of bank statements. Six months of consistent receivables. $100K+ weekly cash flow. Lawyer-reviewed every time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>The business pays weekly</h3>
+        <p>ACH pulls daily on the receivables we have first dibs on. By Friday, the full position is repaid plus your return.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>You decide every Friday</h3>
+        <p>Redeploy into next week's position, or pull your money out. No lock-up. Your call, every single week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MATH -->
+<section class="section">
+  <div class="container">
+    <div class="section-eyebrow">Section 3 · Show me the numbers</div>
+    <h2>The math <span class="hl">looks crazy.</span> It's not.</h2>
+    <p class="lede">
+      Every cent of return comes from real businesses paying real fees on real receivables. No leverage. No magic. The reason you've never heard of it is because operators who run these books at scale don't need outside capital - they have $30M+ lines of credit from private equity.
+    </p>
+
+    <div class="math-block">
+      <div class="math-block-title">A $20,000 position · One week</div>
+      <h3 class="math-block-h">From deposit to deposit:</h3>
+
+      <div class="math-row">
+        <div class="math-input">You deposit<strong>$20,000</strong></div>
+        <div class="math-arrow">→</div>
+        <div class="math-output">$2,000 <small>Your return that week</small></div>
+      </div>
+      <div class="math-row">
+        <div class="math-input">Daily ACH pulls (Mon-Thu)<strong>4 days × $475</strong></div>
+        <div class="math-arrow">→</div>
+        <div class="math-output">$1,900 <small>Steady, day-by-day</small></div>
+      </div>
+      <div class="math-row">
+        <div class="math-input">Friday balloon payment<strong>1 × $100</strong></div>
+        <div class="math-arrow">→</div>
+        <div class="math-output">$100 <small>Closes out the position</small></div>
+      </div>
+      <div class="math-row" style="border-top:1px solid var(--border-strong); padding-top:22px;">
+        <div class="math-input"><strong>Result by Friday</strong>Original $20K + $2K return</div>
+        <div class="math-arrow">=</div>
+        <div class="math-output" style="color:var(--accent); font-size:28px;">$22,000 <small>Pull out or redeploy</small></div>
+      </div>
+
+      <div class="weekly">
+        <div class="weekly-day">
+          <div class="weekly-day-label">Mon</div>
+          <div class="weekly-day-amt">$475</div>
+        </div>
+        <div class="weekly-day">
+          <div class="weekly-day-label">Tue</div>
+          <div class="weekly-day-amt">$475</div>
+        </div>
+        <div class="weekly-day">
+          <div class="weekly-day-label">Wed</div>
+          <div class="weekly-day-amt">$475</div>
+        </div>
+        <div class="weekly-day">
+          <div class="weekly-day-label">Thu</div>
+          <div class="weekly-day-amt">$475</div>
+        </div>
+        <div class="weekly-day balloon">
+          <div class="weekly-day-label">Fri Balloon</div>
+          <div class="weekly-day-amt">$100</div>
+        </div>
+      </div>
+
+      <p style="margin-top:28px; font-size:13px; color:var(--muted); line-height:1.6;">
+        Returns scale linearly with position size. <strong style="color:var(--text-2);">$5K returns ~$500/week. $50K returns ~$5,000/week.</strong> Larger positions are deployed across multiple businesses to keep concentration low — $100K+ positions are typically split across 5+ businesses by design. <strong style="color:var(--primary);">Use the calculator below to run your own numbers.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- INDUSTRY CREDIBILITY -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 3 · Why this isn't a fad</div>
+    <div class="section-eyebrow">Section 4 · Why this isn't a fad</div>
     <h2>This industry is <span class="hl">27 years old.</span> Banks lend to the lenders.</h2>
     <p class="lede">
       Merchant cash advances aren't new — they're a $20+ billion US industry that's been institutionalized for two decades. The reason most individuals haven't heard of the lender side is because, at scale, it's been quietly absorbed by private equity. Here's the credibility stack.
@@ -1208,7 +1223,7 @@
 <!-- HEAD-ON OBJECTIONS -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 4 · The honest part</div>
+    <div class="section-eyebrow">Section 5 · The honest part</div>
     <h2>The same questions <span class="hl">everyone has</span>, answered.</h2>
     <p class="lede">
       The number one reason people hesitate on this is that the math sounds too good to be true. So let's address that directly. These are the actual objections we hear on every introductory call. The honest answers are below.
@@ -1258,7 +1273,7 @@
 <!-- HOW WE PROTECT YOUR MONEY -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 5 · Risk mitigation</div>
+    <div class="section-eyebrow">Section 6 · Risk mitigation</div>
     <h2>How your capital is <span class="hl">actually</span> protected.</h2>
     <p class="lede">
       Risk mitigation isn't a bullet point on a page - it's the legal and operational structure that sits between your capital and any single business borrower. Six layers, every position, every week.
@@ -1302,7 +1317,7 @@
 <!-- LIFECYCLE -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 6 · Your week</div>
+    <div class="section-eyebrow">Section 7 · Your week</div>
     <h2>What it looks like, <span class="hl">day by day</span>.</h2>
     <p class="lede">
       Most positions follow this exact rhythm. There are weeks that don't - and we'll tell you about those - but here's the typical lifecycle for a $20K deposit.
@@ -1356,7 +1371,7 @@
 <!-- COMPARISON -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 7 · Compared to what?</div>
+    <div class="section-eyebrow">Section 8 · Compared to what?</div>
     <h2>How this stacks against <span class="hl">other passive income</span> options.</h2>
     <p class="lede">
       Most "passive income" pitches are real - they just operate on a different timeline and a different return profile. Here's where this fits.
@@ -1405,7 +1420,7 @@
 <!-- CONTRACT BREAKDOWN -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 8 · The contract</div>
+    <div class="section-eyebrow">Section 9 · The contract</div>
     <h2>The agreement, <span class="hl">in plain English</span>.</h2>
     <p class="lede">
       Our contract is fixed and non-negotiable - that's not a sales tactic, it's because every line was drafted by counsel to protect you as the first-position lender. Here's the structural anatomy.
@@ -1465,7 +1480,7 @@
 <!-- TESTIMONIALS / REAL STORIES -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 9 · Real stories</div>
+    <div class="section-eyebrow">Section 10 · Real stories</div>
     <h2>What this looks like for <span class="hl">people in it now</span>.</h2>
     <p class="lede">
       Three real participants. All started skeptical. Two had been scammed before in other programs. The pattern is the same - start small, see the first payment hit, then redeploy.
@@ -1509,7 +1524,7 @@
 <!-- WHO IT'S FOR / NOT FOR -->
 <section class="section">
   <div class="container">
-    <div class="section-eyebrow">Section 10 · Honest fit check</div>
+    <div class="section-eyebrow">Section 11 · Honest fit check</div>
     <h2>Who this <span class="hl">is and isn't</span> for.</h2>
     <p class="lede">
       We don't try to sell this to everyone. The wrong fit creates problems for both sides, and we'd rather you self-select out than realize a week in that you should have.
