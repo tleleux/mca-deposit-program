@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <style>
   :root {
     --bg: #ffffff;
@@ -605,29 +607,29 @@
 <header class="topbar">
   <div class="topbar-inner">
     <div class="topbar-brand">Cashflow Acquisitions <span>· MCA Deposit Program</span></div>
-    <a href="#cta" class="btn">Schedule a Call →</a>
+    <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aron-ecomm/mca-deposit-program-call'});return false;" class="btn">Schedule a Call →</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-eyebrow">Private Lending · Weekly Payouts</div>
-    <h1>Learn how this 27-year-old credit market is paying our partners weekly distributions of 10%+, contractually guaranteed.</h1>
+    <div class="hero-eyebrow">Private Lending · Monthly Distributions</div>
+    <h1>Learn how this 27-year-old credit market is paying our partners monthly distributions of 15%, contractually guaranteed.</h1>
     <p class="hero-sub">
-      A merchant cash advance is short-term capital deployed to vetted American businesses — restaurants, gas stations, service providers — in exchange for a contractual claim on their future receivables. Your position is guaranteed against the borrower's receivables, inventory, and a signed authorization on their bank account. Settled every Friday. $5K minimum.
+      A merchant cash advance is short-term capital deployed to vetted American businesses — restaurants, gas stations, service providers — in exchange for a contractual claim on their future receivables. Your position is over-collateralized by 2.5×, with first-position UCC liens on the borrower's receivables, equipment, and inventory, plus a signed ACH authorization on their bank account. Settled monthly. $5K minimum.
     </p>
     <div class="hero-cta-row">
-      <a href="#cta" class="btn btn-lg">Book a 30-min Walkthrough →</a>
+      <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aron-ecomm/mca-deposit-program-call'});return false;" class="btn btn-lg">Book a 30-min Walkthrough →</a>
       <a href="#how" class="btn btn-lg btn-secondary">See how it works ↓</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-value">10%</div>
-        <div class="hero-stat-label">Per week on capital deployed</div>
+        <div class="hero-stat-value">15%</div>
+        <div class="hero-stat-label">Monthly distribution on capital deployed</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-value">7 days</div>
+        <div class="hero-stat-value">30 days</div>
         <div class="hero-stat-label">Max effective lock-up</div>
       </div>
       <div class="hero-stat">
@@ -647,7 +649,7 @@
   <div class="container section-center">
     <h2>Run your own numbers.</h2>
     <p class="section-lede">
-      Same conservative rate the program runs on every active position — 10 points (10%) per week on capital deployed. Slide to your position size. The math updates in real time.
+      The same flat 15% monthly rate the program runs across all active positions. Slide to your deployment size. The math updates in real time.
     </p>
 
     <div class="calc-wrap">
@@ -666,29 +668,29 @@
 
       <div class="calc-results">
         <div class="calc-result-card">
-          <div class="calc-result-label">Per Week</div>
-          <div class="calc-result-value" id="calc-week">$2,000</div>
-          <div class="calc-result-sub">paid every Friday</div>
-        </div>
-        <div class="calc-result-card">
           <div class="calc-result-label">Per Month</div>
-          <div class="calc-result-value" id="calc-month">$8,000</div>
-          <div class="calc-result-sub">4 weeks redeployed</div>
+          <div class="calc-result-value" id="calc-month">$3,000</div>
+          <div class="calc-result-sub">monthly distribution</div>
         </div>
         <div class="calc-result-card">
           <div class="calc-result-label">Per Quarter</div>
-          <div class="calc-result-value" id="calc-quarter">$26,000</div>
-          <div class="calc-result-sub">13 weeks of returns</div>
+          <div class="calc-result-value" id="calc-quarter">$9,000</div>
+          <div class="calc-result-sub">3 monthly cycles</div>
         </div>
         <div class="calc-result-card">
           <div class="calc-result-label">6 Months</div>
-          <div class="calc-result-value" id="calc-half">$52,000</div>
-          <div class="calc-result-sub">26 weeks redeployed</div>
+          <div class="calc-result-value" id="calc-half">$18,000</div>
+          <div class="calc-result-sub">6 monthly cycles</div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">1 Year</div>
+          <div class="calc-result-value" id="calc-year">$36,000</div>
+          <div class="calc-result-sub">12 monthly cycles</div>
         </div>
       </div>
 
       <p class="calc-disclaimer">
-        <strong>Conservative math:</strong> assumes the standard 10-point weekly rate, continuous redeployment of principal only, no skipped weeks, no defaults. Returns are based on real cash flow from vetted borrower businesses and are not guaranteed. <a href="#cta">Walk through your numbers with the team →</a>
+        <strong>Conservative math:</strong> assumes the flat 15% monthly rate, continuous redeployment of principal only, no skipped months, no defaults. Returns are based on real cash flow from vetted borrower businesses and are not guaranteed. <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aron-ecomm/mca-deposit-program-call'});return false;">Walk through your numbers with the team →</a>
       </p>
     </div>
   </div>
@@ -715,37 +717,32 @@
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <h3>The business pays daily, settles Friday</h3>
-        <p>ACH pulls daily on the receivables we have first-position liens against. Position closes Friday.</p>
+        <h3>The business pays daily, settles monthly</h3>
+        <p>ACH pulls daily from the receivables we hold first-position liens against. Your position settles at month-end with principal plus your 15% return.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
-        <h3>You decide every Friday</h3>
-        <p>Redeploy into next week's position, or wire your money out. No lock-up. Your call, every week.</p>
+        <h3>You decide every month</h3>
+        <p>Redeploy into the next monthly position, or wire your money out. No lock-up beyond the 30-day cycle. Your call, every month.</p>
       </div>
     </div>
 
     <div class="math-box">
-      <div class="math-box-title">A $20,000 position · One week</div>
+      <div class="math-box-title">A $20,000 position · One month</div>
       <div class="math-row">
         <div class="math-label">You deposit<strong>$20,000</strong></div>
         <div class="math-arrow">→</div>
-        <div class="math-value">$2,000<small>your return that week</small></div>
+        <div class="math-value">$3,000<small>your monthly distribution at 15%</small></div>
       </div>
       <div class="math-row">
-        <div class="math-label">Daily ACH (Mon-Thu)<strong>4 days × $475</strong></div>
+        <div class="math-label">Daily ACH from borrower<strong>30 days × ~$100</strong></div>
         <div class="math-arrow">→</div>
-        <div class="math-value">$1,900<small>steady, day-by-day</small></div>
-      </div>
-      <div class="math-row">
-        <div class="math-label">Friday balloon<strong>1 × $100</strong></div>
-        <div class="math-arrow">→</div>
-        <div class="math-value">$100<small>closes the position</small></div>
+        <div class="math-value">$3,000<small>accumulates daily into reserve</small></div>
       </div>
       <div class="math-row total">
-        <div class="math-label"><strong>By Friday</strong>$20K principal + $2K return</div>
+        <div class="math-label"><strong>Month-end settlement</strong>$20K principal + $3K return</div>
         <div class="math-arrow">=</div>
-        <div class="math-value">$22,000<small>pull out or redeploy</small></div>
+        <div class="math-value">$23,000<small>pull out or redeploy</small></div>
       </div>
     </div>
 
@@ -779,8 +776,36 @@
       </div>
       <div class="protection">
         <div class="protection-icon">🏦</div>
-        <h4>Approved-but-undersized</h4>
-        <p>We deploy $20K into businesses approved for $50K. By design, we never lend to the maximum — leaving margin to recover if anything slips.</p>
+        <h4>Over-collateralized by 2.5×</h4>
+        <p>We deploy $20K into businesses approved for $50–80K. Every dollar of your capital sits behind 2.5× its value in seizable assets — by design, we never lend to the maximum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BUSINESSES PAY -->
+<section>
+  <div class="container">
+    <h2>Why businesses pay these rates willingly.</h2>
+    <p class="section-lede">
+      The most common follow-up question: <em>"Why would a real business pay 20–40% factor rates for short-term capital?"</em> Three reasons — none of them desperation.
+    </p>
+
+    <div class="protections">
+      <div class="protection">
+        <div class="protection-icon">⚡</div>
+        <h4>Speed: 48 hours vs. 90 days</h4>
+        <p>Banks take 60–90 days. Payroll is due Friday. Equipment broke this morning. A seasonal supplier needs paying today. Speed is the product they're paying for — not capital.</p>
+      </div>
+      <div class="protection">
+        <div class="protection-icon">💧</div>
+        <h4>Liquidity: "I'm not touching my cash"</h4>
+        <p>A construction company doing $1.2M/month doesn't want to drain operating reserves to bridge a 30-day gap. Paying 20% on $50K beats touching $50K of working capital they need for the next job.</p>
+      </div>
+      <div class="protection">
+        <div class="protection-icon">🔓</div>
+        <h4>Access: profitable but over-leveraged</h4>
+        <p>Many businesses already have outstanding bank loans, SBA debt, or equipment financing. They have the revenue to service more — but bank covenants block additional borrowing. MCA fills the structural gap traditional lenders won't.</p>
       </div>
     </div>
   </div>
@@ -801,7 +826,7 @@
         </div>
         <div class="review-attr">
           <div class="review-name">Alan D.</div>
-          <div class="review-meta">Active lender · 4+ weekly payouts<br/>Recovered first scam loss in 10 weeks</div>
+          <div class="review-meta">Active lender · multiple cycles in<br/>Recovered prior losses inside the first deployment cycle</div>
         </div>
       </div>
       <div class="review">
@@ -838,19 +863,19 @@
       <div class="faq-item">
         <div class="faq-q">"Sounds too good to be true."</div>
         <div class="faq-a">
-          The math is consistent with the entire MCA industry — not unique to us. <strong>OnDeck reports 46% portfolio yields in public 10-K filings.</strong> Merchants pay 20-40% factor rates because banks won't fund them in the timeline they need (24-72 hours vs 30-90 days). We earn the spread. You get a piece of it. Each weekly payment comes from real ACH withdrawals on a real business — verifiable.
+          We hear this on every single call. The math is consistent with the entire MCA industry — not unique to us. <strong>OnDeck reports 46% portfolio yields in public 10-K filings.</strong> Merchants pay 20–40% factor rates because banks won't fund them in the timeline they need (48 hours vs 60–90 days). We earn the spread. You get a flat 15% monthly slice of it, paid from real ACH withdrawals on a real business — verifiable.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-q">"What if the business doesn't pay?"</div>
         <div class="faq-a">
-          Three protective layers. <strong>First-position UCC liens</strong> on receivables, equipment, and inventory — we get paid before any other creditor. <strong>7-30 day contract window</strong> gives operations room to recover before any "default" is called. <strong>Approved-but-undersized deployment</strong> — we lend $20K into businesses approved for $50K, leaving structural margin. In the program's history, we've never had a lender lose principal.
+          Four protective layers. <strong>First-position UCC liens</strong> on receivables, equipment, and inventory — we get paid before any other creditor. <strong>Signed ACH authorization</strong> on the merchant's processor reserves — typically $10–15K accessible immediately if needed. <strong>7-to-30 day contract window</strong> gives operations room to recover before any "default" is called. <strong>Over-collateralized deployment</strong> — we lend $20K into businesses approved for $50–80K, leaving 2.5× structural margin. In the program's history, we've never had a lender lose principal.
         </div>
       </div>
       <div class="faq-item">
         <div class="faq-q">"How quickly can I get my money out?"</div>
         <div class="faq-a">
-          Every Friday, your position closes. You decide on the spot — redeploy into next week's position, or wire it back to your account. <strong>Maximum lock-up is 7 days.</strong> If you start with $5K to test, you can pull all $5K plus your return after one week. Once we hit our $2M cap and switch to line-of-credit fulfillment, we'll support same-day emergency liquidity.
+          At month-end, your position closes. You decide on the spot — redeploy into the next monthly cycle, or wire it back to your account. <strong>Maximum effective lock-up is 30 days.</strong> If you start with $5K to test, you can pull all $5K plus your return after one cycle. Once we hit our $2M cap and switch to line-of-credit fulfillment, we'll support same-day emergency liquidity.
         </div>
       </div>
       <div class="faq-item">
@@ -874,10 +899,10 @@
     </div>
 
     <div class="final-cta" id="cta">
-      <h2>Your first Friday is closer than you think.</h2>
-      <p>A 30-minute call with Aaron and Sam. We answer your questions, walk through the contract, and you decide on your timeline. We don't follow up to chase signatures.</p>
-      <a href="https://calendly.com/aron-ecomm/mca-deposit-program-call" class="btn btn-lg" style="background:white; color:var(--text);">Book Your Walkthrough →</a>
-      <div class="final-cta-meta">FREE · 30 MIN · ZOOM LINK SENT IMMEDIATELY · NO FOLLOW-UP CHASING</div>
+      <h2>Your first month is closer than you think.</h2>
+      <p>A 30-minute call with Aaron and Sam. We answer your questions, walk through the contract, and you decide on your timeline. We don't chase. We don't follow up.</p>
+      <a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/aron-ecomm/mca-deposit-program-call'});return false;" class="btn btn-lg" style="background:white; color:var(--text);">Book Your Walkthrough →</a>
+      <div class="final-cta-meta">FREE · 30 MIN · ZOOM · NO FOLLOW-UP CHASING</div>
     </div>
   </div>
 </section>
@@ -896,21 +921,21 @@
   var slider = document.getElementById('calc-slider');
   if (!slider) return;
   var amountEl = document.getElementById('calc-amount');
-  var weekEl = document.getElementById('calc-week');
   var monthEl = document.getElementById('calc-month');
   var quarterEl = document.getElementById('calc-quarter');
   var halfEl = document.getElementById('calc-half');
+  var yearEl = document.getElementById('calc-year');
   function fmt(n) {
     return '$' + Math.round(n).toLocaleString('en-US');
   }
   function update() {
     var amt = parseInt(slider.value, 10);
-    var weekly = amt * 0.10;
+    var monthly = amt * 0.15;
     amountEl.textContent = fmt(amt);
-    weekEl.textContent = fmt(weekly);
-    monthEl.textContent = fmt(weekly * 4);
-    quarterEl.textContent = fmt(weekly * 13);
-    halfEl.textContent = fmt(weekly * 26);
+    monthEl.textContent = fmt(monthly);
+    quarterEl.textContent = fmt(monthly * 3);
+    halfEl.textContent = fmt(monthly * 6);
+    yearEl.textContent = fmt(monthly * 12);
   }
   slider.addEventListener('input', update);
   update();
